@@ -1,0 +1,113 @@
+#ifndef MAGIC_H
+#define MAGIC_H
+#include <bitset>
+#include <map>
+#include <vector>
+#include <iostream>
+
+#pragma warning( disable : 4244 4267 ) //Disables unnesesarry conversion warnings between bitsets and ULLs 
+
+typedef std::vector<std::bitset<64>> moveSet;
+typedef std::map<int, moveSet> moveMap;
+typedef std::map<int, std::map<int, std::bitset<64>>> magicMap;
+typedef std::bitset<64> Bitboard;
+
+class MagicGenerator
+{
+public:
+	MagicGenerator();
+	std::bitset<64> getBishopAttacks(int, std::bitset<64>);
+	std::bitset<64> getRookAttacks(int, std::bitset<64>);
+	std::bitset<64> getQueenAttacks(int, std::bitset<64>);
+	std::bitset<64> getRayToSquare(int, int, char);
+	std::bitset<64> getRayOverlaps(int, int, char);
+	std::bitset<64> xrayRookAttacks(std::bitset<64>, std::bitset<64>, int);
+	std::bitset<64> xrayBishopAttacks(std::bitset<64>, std::bitset<64>, int);
+	int bitScanForward(uint64_t bitboard);
+	int bitScanReverse(uint64_t bitboard);
+
+private:
+	void generateNorth();
+	void generateEast();
+	void generateSouth();
+	void generateWest();
+	void generateNoEa();
+	void generateNoWe();
+	void generateSoEa();
+	void generateSoWe();
+	void generateRookAttacks();
+	void generateBishopAttacks();
+	void generateQueenAttacks();
+	std::bitset<64> generateBlockerBoard(int, std::bitset<64>);
+	void generateBlockers();
+	std::bitset<64> generateBishopMoveBoard(int, std::bitset<64>);
+	std::bitset<64> generateRookMoveBoard(int, std::bitset<64>);
+
+	void generateAttackSets();
+
+	moveMap rayAttacks;
+	moveSet rookAttacks;
+	moveSet bishopAttacks;
+	moveSet queenAttacks;
+	moveSet rookBlockerMasks;
+	moveSet bishopBlockerMasks;
+	moveMap rookBlockerBoards;
+	moveMap bishopBlockerBoards;
+	magicMap bishopAttackSet;
+	magicMap rookAttackSet;
+
+	std::map<int, int> oppositeRay = { {0,1}, {1,0}, {2,3}, {3,2}, {4,6}, {6,4}, {5,7}, {7,5} };
+
+	static constexpr std::bitset<64> empty{ 0x0000000000000000 };
+
+	static const int North = 0;
+	static const int South = 1;
+	static const int East = 2;
+	static const int West = 3;
+	static const int NoEa = 4;
+	static const int NoWe = 5;
+	static const int SoWe = 6;
+	static const int SoEa = 7;
+
+	static constexpr unsigned long long rookMagics[64] = {
+    0xa8002c000108020ULL, 0x6c00049b0002001ULL, 0x100200010090040ULL, 0x2480041000800801ULL, 0x280028004000800ULL,
+    0x900410008040022ULL, 0x280020001001080ULL, 0x2880002041000080ULL, 0xa000800080400034ULL, 0x4808020004000ULL,
+    0x2290802004801000ULL, 0x411000d00100020ULL, 0x402800800040080ULL, 0xb000401004208ULL, 0x2409000100040200ULL,
+    0x1002100004082ULL, 0x22878001e24000ULL, 0x1090810021004010ULL, 0x801030040200012ULL, 0x500808008001000ULL,
+    0xa08018014000880ULL, 0x8000808004000200ULL, 0x201008080010200ULL, 0x801020000441091ULL, 0x800080204005ULL,
+    0x1040200040100048ULL, 0x120200402082ULL, 0xd14880480100080ULL, 0x12040280080080ULL, 0x100040080020080ULL,
+    0x9020010080800200ULL, 0x813241200148449ULL, 0x491604001800080ULL, 0x100401000402001ULL, 0x4820010021001040ULL,
+    0x400402202000812ULL, 0x209009005000802ULL, 0x810800601800400ULL, 0x4301083214000150ULL, 0x204026458e001401ULL,
+    0x40204000808000ULL, 0x8001008040010020ULL, 0x8410820820420010ULL, 0x1003001000090020ULL, 0x804040008008080ULL,
+    0x12000810020004ULL, 0x1000100200040208ULL, 0x430000a044020001ULL, 0x280009023410300ULL, 0xe0100040002240ULL,
+    0x200100401700ULL, 0x2244100408008080ULL, 0x8000400801980ULL, 0x2000810040200ULL, 0x8010100228810400ULL,
+    0x2000009044210200ULL, 0x4080008040102101ULL, 0x40002080411d01ULL, 0x2005524060000901ULL, 0x502001008400422ULL,
+    0x489a000810200402ULL, 0x1004400080a13ULL, 0x4000011008020084ULL, 0x26002114058042ULL
+};
+
+	static constexpr unsigned long long  bishopMagics[64] = {
+    0x89a1121896040240ULL, 0x2004844802002010ULL, 0x2068080051921000ULL, 0x62880a0220200808ULL, 0x4042004000000ULL,
+    0x100822020200011ULL, 0xc00444222012000aULL, 0x28808801216001ULL, 0x400492088408100ULL, 0x201c401040c0084ULL,
+    0x840800910a0010ULL, 0x82080240060ULL, 0x2000840504006000ULL, 0x30010c4108405004ULL, 0x1008005410080802ULL,
+    0x8144042209100900ULL, 0x208081020014400ULL, 0x4800201208ca00ULL, 0xf18140408012008ULL, 0x1004002802102001ULL,
+    0x841000820080811ULL, 0x40200200a42008ULL, 0x800054042000ULL, 0x88010400410c9000ULL, 0x520040470104290ULL,
+    0x1004040051500081ULL, 0x2002081833080021ULL, 0x400c00c010142ULL, 0x941408200c002000ULL, 0x658810000806011ULL,
+    0x188071040440a00ULL, 0x4800404002011c00ULL, 0x104442040404200ULL, 0x511080202091021ULL, 0x4022401120400ULL,
+    0x80c0040400080120ULL, 0x8040010040820802ULL, 0x480810700020090ULL, 0x102008e00040242ULL, 0x809005202050100ULL,
+    0x8002024220104080ULL, 0x431008804142000ULL, 0x19001802081400ULL, 0x200014208040080ULL, 0x3308082008200100ULL,
+    0x41010500040c020ULL, 0x4012020c04210308ULL, 0x208220a202004080ULL, 0x111040120082000ULL, 0x6803040141280a00ULL,
+    0x2101004202410000ULL, 0x8200000041108022ULL, 0x21082088000ULL, 0x2410204010040ULL, 0x40100400809000ULL,
+    0x822088220820214ULL, 0x40808090012004ULL, 0x910224040218c9ULL, 0x402814422015008ULL, 0x90014004842410ULL,
+    0x1000042304105ULL, 0x10008830412a00ULL, 0x2520081090008908ULL, 0x40102000a0a60140ULL,
+};
+
+const int index64[64] = {
+	 0,  47, 1,  56, 48, 27, 2,  60, 57, 49, 41, 37, 28, 16, 3,  61,
+	54, 58, 35, 52, 50, 42, 21, 44, 38, 32, 29, 23, 17, 11, 4,  62,
+	46, 55, 26, 59, 40, 36, 15, 53, 34, 51, 20, 43, 31, 22, 10, 45,
+	25, 39, 14, 33, 19, 30, 9,  24, 13, 18, 8,  12, 7,  6,  5,  63
+};
+
+};
+
+#endif
