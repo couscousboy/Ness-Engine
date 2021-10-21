@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Board" Collapsed="true">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QhgYEAAQCCAABgICBQrEAgAClAAGICAkQAICAmAQJRA=</HashCode>
+      <FileName>Header Files\Board.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BoardSquare" Collapsed="true">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEBAQAACAAABgAgAcAAA=</HashCode>
+      <FileName>Header Files\BoardSquare.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Engine" Collapsed="true">
+    <Position X="17.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAIAAAAAAAAEAAAAAAAAAAAJCAAAAACAAA=</HashCode>
+      <FileName>Header Files\Engine.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Evaluation" Collapsed="true">
+    <Position X="14.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAgAgAAgAABAAAAAAAEgAAAAAAAAAAIAAAAEAAAAA=</HashCode>
+      <FileName>Header Files\Evaluation.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game" Collapsed="true">
+    <Position X="16" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAgAAAAAAAACCAQAEkAAAAAiAAAAI4CAAAAQUAAA=</HashCode>
+      <FileName>Header Files\Game.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MagicGenerator" Collapsed="true">
+    <Position X="17.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gRCBACUAABAQBCEJAAQAIGAGkBGQQAQkAAANEAHBKwQ=</HashCode>
+      <FileName>Header Files\MagicGenerator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoveGenerator" Collapsed="true">
+    <Position X="14.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CIAAgAEAAiAZkAglEAAAEQAAYAAACIgYMCBEkgCAQAg=</HashCode>
+      <FileName>Header Files\MoveGenerator.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Piece" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgBQAwAAAQAAgAAAAAAEEAAFIBAVAgCADABAoAARAgA=</HashCode>
+      <FileName>Header Files\Piece.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="King" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Header Files\Pieces.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Queen" Collapsed="true">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Header Files\Pieces.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Rook" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Header Files\Pieces.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bishop" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Header Files\Pieces.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Knight" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Header Files\Pieces.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pawn" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Header Files\Pieces.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Search" Collapsed="true">
+    <Position X="16" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAACAAgAEAAAEAAAAAAAAAAAICAAAAAgAAA=</HashCode>
+      <FileName>Header Files\Search.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Move" Collapsed="true">
+    <Position X="14.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAgAABAAAAAAAAAAAAAAAAAAAAAAAAAEAAABAAAAAA=</HashCode>
+      <FileName>Header Files\Board.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="Bitboard" Collapsed="true">
+    <Position X="14.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Header Files\Board.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="moveSet" Collapsed="true">
+    <Position X="14.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Header Files\MagicGenerator.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="moveMap" Collapsed="true">
+    <Position X="17.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Header Files\MagicGenerator.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="magicMap" Collapsed="true">
+    <Position X="16" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Header Files\MagicGenerator.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
